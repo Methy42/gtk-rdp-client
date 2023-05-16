@@ -1,0 +1,3 @@
+/c/Users/tanghuayu/Desktop/rdp-demo-2/build/CMakeFiles/rdp_client.dir
+/c/Users/tanghuayu/Desktop/rdp-demo-2/build/CMakeFiles/edit_cache.dir
+/c/Users/tanghuayu/Desktop/rdp-demo-2/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/rdp_client.dir/src/component/antd_button.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/component/antd_button.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/component/antd_card.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/component/antd_card.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/component/antd_form.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/component/antd_form.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/component/antd_form_item.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/component/antd_form_item.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/component/antd_input.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/component/antd_input.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/domain/desktop.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/domain/desktop.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/domain/tls_client.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/domain/tls_client.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/domain/tpkt.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/domain/tpkt.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/domain/x224.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/domain/x224.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/domain/x224_connection_request.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/domain/x224_connection_request.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/main.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/main.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/modal/remote_desktop_modal.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/modal/remote_desktop_modal.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/orm/desktop_orm.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/orm/desktop_orm.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/page/remote_desktop_list_page.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/page/remote_desktop_list_page.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/page/remote_desktop_view_page.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/page/remote_desktop_view_page.cpp.o.d"
+  "CMakeFiles/rdp_client.dir/src/service/rdp_service.cpp.o"
+  "CMakeFiles/rdp_client.dir/src/service/rdp_service.cpp.o.d"
+  "librdp_client.dll.a"
+  "rdp_client.exe"
+  "rdp_client.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/rdp_client.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,49 @@
+{
+    "desktops": [
+        {
+            "account": "Administrator",
+            "auto_login": false,
+            "domain": "",
+            "ip": "192.168.0.1",
+            "name": "测试桌面",
+            "password": "password",
+            "port": 3389
+        },
+        {
+            "account": "Administrator",
+            "auto_login": false,
+            "domain": "",
+            "ip": "192.168.0.1",
+            "name": "测试桌面",
+            "password": "password",
+            "port": 3389
+        },
+        {
+            "account": "Administrator",
+            "auto_login": false,
+            "domain": "",
+            "ip": "192.168.0.1",
+            "name": "测试桌面",
+            "password": "password",
+            "port": 3389
+        },
+        {
+            "account": "Administrator",
+            "auto_login": false,
+            "domain": "",
+            "ip": "192.168.0.1",
+            "name": "测试桌面",
+            "password": "password",
+            "port": 3389
+        },
+        {
+            "account": "Administrator",
+            "auto_login": false,
+            "domain": "",
+            "ip": "192.168.0.1",
+            "name": "测试桌面",
+            "password": "password",
+            "port": 3389
+        }
+    ]
+}
