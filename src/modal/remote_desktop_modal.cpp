@@ -1,5 +1,9 @@
 #include "remote_desktop_modal.h"
 
+const char *REMOTE_DESKTOP_MODAL_CSS = "\
+.\
+";
+
 // 在这里实现 RemoteDesktopModal 类的方法
 
 RemoteDesktopModal::RemoteDesktopModal()
@@ -16,11 +20,11 @@ RemoteDesktopModal::RemoteDesktopModal()
     AntdForm* remote_desktop_form = new AntdForm();
 
     // 远程桌面名称
-    m_name_input = new AntdInput(new AntdInputOption{g_strdup("请输入名称"), g_strdup("")});
+    m_name_input = new AntdInput(new AntdInputOption{g_strdup("请输入名称"), g_strdup(""), 40});
     AntdFormItem* name_form_item = new AntdFormItem(new AntdFormItemOption{g_strdup("名称"), m_name_input->getWidget(), NULL});
 
     // 远程桌面IP地址
-    m_ip_input = new AntdInput(new AntdInputOption{ g_strdup("请输入IP"), g_strdup("") });
+    m_ip_input = new AntdInput(new AntdInputOption{ g_strdup("请输入IP"), g_strdup(""), 40 });
     AntdFormItem* ip_form_item = new AntdFormItem(new AntdFormItemOption{g_strdup("IP地址"), m_ip_input->getWidget(), NULL});
 
     // 远程桌面端口号
@@ -34,16 +38,16 @@ RemoteDesktopModal::RemoteDesktopModal()
     AntdFormItem* port_form_item = new AntdFormItem(new AntdFormItemOption{ g_strdup("端口"), m_port_input, NULL });
     
     // 远程桌面账号
-    m_username_input = new AntdInput(new AntdInputOption{ g_strdup("请输入桌面账号"), g_strdup("") });
+    m_username_input = new AntdInput(new AntdInputOption{ g_strdup("请输入桌面账号"), g_strdup(""), 40 });
     AntdFormItem* username_form_item = new AntdFormItem(new AntdFormItemOption{g_strdup("账号"), m_username_input->getWidget(), NULL});
 
     // 远程桌面密码
-    m_password_input = new AntdInput(new AntdInputOption{ g_strdup("请输入密码"), g_strdup("") });
+    m_password_input = new AntdInput(new AntdInputOption{ g_strdup("请输入密码"), g_strdup(""), 40 });
     gtk_entry_set_visibility(GTK_ENTRY(m_password_input->getWidget()), false); // 将密码输入框中的内容隐藏
     AntdFormItem* password_form_item = new AntdFormItem(new AntdFormItemOption{g_strdup("密码"), m_password_input->getWidget(), NULL});
 
     // 远程桌面域名
-    m_domain_input = new AntdInput(new AntdInputOption{ g_strdup("请输入域名"), g_strdup("") });
+    m_domain_input = new AntdInput(new AntdInputOption{ g_strdup("请输入域名"), g_strdup(""), 40 });
     AntdFormItem* domain_form_item = new AntdFormItem(new AntdFormItemOption{g_strdup("域名"), m_domain_input->getWidget(), NULL});
 
     // 是否自动登录
@@ -59,6 +63,9 @@ RemoteDesktopModal::RemoteDesktopModal()
     remote_desktop_form->add_item(auto_login_form_item);
 
     gtk_container_add(GTK_CONTAINER(vbox), remote_desktop_form->get_widget());
+
+    remote_desktop_form->set_form_item_label_width(80);
+    remote_desktop_form->set_form_item_margin_bottom(10);
 
     GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
     gtk_box_set_homogeneous(GTK_BOX(hbox), true);

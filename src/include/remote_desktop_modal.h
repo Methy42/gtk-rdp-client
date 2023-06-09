@@ -4,11 +4,14 @@
 #include <string>
 
 #include <gtk/gtk.h>
+#include <glib.h>
 
 #include "desktop.h"
 #include "desktop_orm.h"
 #include "antd_input.h"
 #include "antd_form.h"
+
+extern const char *REMOTE_DESKTOP_MODAL_CSS;
 
 class RemoteDesktopModal {
 public:

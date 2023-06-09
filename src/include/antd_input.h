@@ -10,6 +10,7 @@ struct AntdInputOption
 {
     gchar* placeholder;
     gchar* value;
+    gint width;
 };
 
 class AntdInput

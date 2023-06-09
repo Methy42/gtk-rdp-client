@@ -36,6 +36,7 @@ public:
 private:
     GtkWidget* m_widget;
     GtkWidget* m_label;
+    GtkWidget* m_label_container;
     GtkWidget* m_control;
     GtkWidget* m_explain;
     ValidatorFunc* m_validator;

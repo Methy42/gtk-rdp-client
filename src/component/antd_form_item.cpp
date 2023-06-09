@@ -10,7 +10,9 @@ const char *ANTD_FORM_ITEM_CSS = "\
 .antd-form-item .antd-explain {\
 \
 }\
-.antd-form-item .antd-content .antd-label {\
+.antd-form-item .antd-content .antd-label-container {\
+}\
+.antd-form-item .antd-content .antd-label-container .antd-label {\
 }\
 .antd-form-item .antd-content .antd-control {\
 }\
@@ -22,11 +24,12 @@ AntdFormItem::AntdFormItem(AntdFormItemOption *option)
     GtkWidget *content = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     m_explain = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     m_label = gtk_label_new(option->label);
-    GtkWidget* 
+    m_label_container = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     m_control = option->control;
     m_validator = option->validator;
 
-    gtk_container_add(GTK_CONTAINER(content), m_label);
+    gtk_container_add(GTK_CONTAINER(m_label_container), m_label);
+    gtk_container_add(GTK_CONTAINER(content), m_label_container);
     gtk_container_add(GTK_CONTAINER(content), m_control);
     gtk_container_add(GTK_CONTAINER(m_widget), content);
     gtk_container_add(GTK_CONTAINER(m_widget), m_explain);
@@ -34,6 +37,7 @@ AntdFormItem::AntdFormItem(AntdFormItemOption *option)
     GtkStyleContext *context = gtk_widget_get_style_context(m_widget);
     GtkStyleContext *content_context = gtk_widget_get_style_context(content);
     GtkStyleContext *explain_context = gtk_widget_get_style_context(m_explain);
+    GtkStyleContext *label_container_context = gtk_widget_get_style_context(m_label_container);
     GtkStyleContext *label_context = gtk_widget_get_style_context(m_label);
     GtkStyleContext *control_context = gtk_widget_get_style_context(m_control);
 
@@ -43,12 +47,14 @@ AntdFormItem::AntdFormItem(AntdFormItemOption *option)
     gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(m_css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     gtk_style_context_add_provider(content_context, GTK_STYLE_PROVIDER(m_css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     gtk_style_context_add_provider(explain_context, GTK_STYLE_PROVIDER(m_css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+    gtk_style_context_add_provider(label_container_context, GTK_STYLE_PROVIDER(m_css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     gtk_style_context_add_provider(label_context, GTK_STYLE_PROVIDER(m_css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     gtk_style_context_add_provider(control_context, GTK_STYLE_PROVIDER(m_css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
 
     gtk_style_context_add_class(context, "antd-form-item");
     gtk_style_context_add_class(content_context, "antd-content");
     gtk_style_context_add_class(explain_context, "antd-explain");
+    gtk_style_context_add_class(label_container_context, "antd-label-container");
     gtk_style_context_add_class(label_context, "antd-label");
     gtk_style_context_add_class(control_context, "antd-control");
 }
@@ -83,7 +89,7 @@ bool AntdFormItem::validate()
 
 void AntdFormItem::set_label_width(gint width)
 {
-    gtk_label_set_width_chars(GTK_LABEL(m_label), width);
+    gtk_widget_set_size_request(m_label_container, width, -1);
 }
 
 void AntdFormItem::set_margin_bottom(gint margin_bottom)

@@ -2,7 +2,7 @@
 
 const char *ANTD_INPUT_CSS = "\
     .antd-input {\
-        border: #d9d9d9;\
+        border-color: #d9d9d9;\
         background: #ffffff;\
         border-radius: 6px;\
     }\
@@ -17,6 +17,10 @@ AntdInput::AntdInput(AntdInputOption* option)
     m_widget = gtk_entry_new();
     gtk_entry_set_placeholder_text(GTK_ENTRY(m_widget), option->placeholder);
     gtk_entry_set_text(GTK_ENTRY(m_widget), option->value);
+
+    if (option->width != 0) {
+        gtk_entry_set_max_width_chars(GTK_ENTRY(m_widget), option->width);
+    }
 
     m_css_provider = gtk_css_provider_new();
     gtk_css_provider_load_from_data(m_css_provider, ANTD_INPUT_CSS, -1, NULL);
